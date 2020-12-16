@@ -1123,14 +1123,17 @@ void SortingArr(char arr[C], bool Up)
 }
 void SortingArr(int arr[R][C], bool Up)
 {
+	/*
 	if (Up)
 	{
+		int iteration = 1;
 		for (int n = 0; n < R * C; n++)
 		{
 			for (int i = 0; i < R; i++)
 			{
 				for (int j = 0; j < C; j++)
 				{
+					iteration++;
 					if (j != C - 1 && arr[i][j] > arr[i][j + 1])
 					{
 						int bufer = arr[i][j];
@@ -1146,6 +1149,7 @@ void SortingArr(int arr[R][C], bool Up)
 				}
 			}
 		}
+		std::cout << "Количество итераций: " << iteration << std::endl;
 	}
 	else
 	{
@@ -1171,6 +1175,50 @@ void SortingArr(int arr[R][C], bool Up)
 			}
 		}
 	}
+	*/
+	if (Up)
+	{
+		for (int i = 0; i < R; i++)
+		{
+			for (int j = 0; j < C; j++)
+			{
+				for (int k = i; k < R; k++)
+				{
+					for (int l = k == i ? j + 1 : 0; l < C; l++) // интересное
+					{
+						if (arr[i][j] > arr[k][l])
+						{
+							int  bufer = arr[i][j];
+							arr[i][j] = arr[k][l];
+							arr[k][l] = bufer;
+						}
+					}
+				}
+			}
+		}
+	}
+	else
+	{
+		for (int i = 0; i < R; i++)
+		{
+			for (int j = 0; j < C; j++)
+			{
+				for (int k = i; k < R; k++)
+				{
+					for (int l = k == i ? j + 1 : 0; l < C; l++) // интересное
+					{
+						if (arr[i][j] < arr[k][l])
+						{
+							int  bufer = arr[i][j];
+							arr[i][j] = arr[k][l];
+							arr[k][l] = bufer;
+						}
+					}
+				}
+			}
+		}
+	}
+
 }
 void SortingArr(float arr[R][C], bool Up)
 {
