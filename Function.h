@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 
 using namespace std;
@@ -7,25 +7,25 @@ using std::cin;
 using std::endl;
 using std::count;
 
-//БЛОК УПРАВЛЕНИЯ
-const int R = 5; //Количество строчек
-const int C = 8; //Количество колонок
-const int round_size = 3; //Количество знаков после запятой для массивов float и double
+//Р‘Р›РћРљ РЈРџР РђР’Р›Р•РќРРЇ
+const int R = 5; //РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕС‡РµРє
+const int C = 8; //РљРѕР»РёС‡РµСЃС‚РІРѕ РєРѕР»РѕРЅРѕРє
+const int round_size = 3; //РљРѕР»РёС‡РµСЃС‚РІРѕ Р·РЅР°РєРѕРІ РїРѕСЃР»Рµ Р·Р°РїСЏС‚РѕР№ РґР»СЏ РјР°СЃСЃРёРІРѕРІ float Рё double
 
-//Прототипы функций
-void FillRand(int arr[C], int minRand = 0, int maxRand = 100); //нижняя и верхняя граница чисел
-void FillRand(float arr[C], int round = round_size, int minRand = 0, int maxRand = 100); //round - количество знаков после запятой
-void FillRand(double arr[C], int round = round_size, int minRand = 0, int maxRand = 100); //round - количество знаков после запятой
-void FillRand(char arr[C], int minRand = 33, int maxRand = 254); //От A до Z
-void FillRand(int arr[R][C], int minRand = 0, int maxRand = 100); //нижняя и верхняя граница чисел
-void FillRand(float arr[R][C], int round = round_size, int minRand = 0, int maxRand = 100); //round - количество знаков после запятой
-void FillRand(double arr[R][C], int round = round_size, int minRand = 0, int maxRand = 100); //round - количество знаков после запятой
-void FillRand(char arr[R][C], int minRand = 33, int maxRand = 254); //От A до Z
+//РџСЂРѕС‚РѕС‚РёРїС‹ С„СѓРЅРєС†РёР№
+void FillRand(int arr[C], int minRand = 0, int maxRand = 100); //РЅРёР¶РЅСЏСЏ Рё РІРµСЂС…РЅСЏСЏ РіСЂР°РЅРёС†Р° С‡РёСЃРµР»
+void FillRand(float arr[C], int round = round_size, int minRand = 0, int maxRand = 100); //round - РєРѕР»РёС‡РµСЃС‚РІРѕ Р·РЅР°РєРѕРІ РїРѕСЃР»Рµ Р·Р°РїСЏС‚РѕР№
+void FillRand(double arr[C], int round = round_size, int minRand = 0, int maxRand = 100); //round - РєРѕР»РёС‡РµСЃС‚РІРѕ Р·РЅР°РєРѕРІ РїРѕСЃР»Рµ Р·Р°РїСЏС‚РѕР№
+void FillRand(char arr[C], int minRand = 33, int maxRand = 254); //РћС‚ A РґРѕ Z
+void FillRand(int arr[R][C], int minRand = 0, int maxRand = 100); //РЅРёР¶РЅСЏСЏ Рё РІРµСЂС…РЅСЏСЏ РіСЂР°РЅРёС†Р° С‡РёСЃРµР»
+void FillRand(float arr[R][C], int round = round_size, int minRand = 0, int maxRand = 100); //round - РєРѕР»РёС‡РµСЃС‚РІРѕ Р·РЅР°РєРѕРІ РїРѕСЃР»Рµ Р·Р°РїСЏС‚РѕР№
+void FillRand(double arr[R][C], int round = round_size, int minRand = 0, int maxRand = 100); //round - РєРѕР»РёС‡РµСЃС‚РІРѕ Р·РЅР°РєРѕРІ РїРѕСЃР»Рµ Р·Р°РїСЏС‚РѕР№
+void FillRand(char arr[R][C], int minRand = 33, int maxRand = 254); //РћС‚ A РґРѕ Z
 
-void FillRandUniq(int arr[R][C], int minRand = 0, int maxRand = 100); //нижняя и верхняя граница чисел
-void FillRandUniq(float arr[R][C], int round = round_size, int minRand = 0, int maxRand = 100); //round - количество знаков после запятой
-void FillRandUniq(double arr[R][C], int round = round_size, int minRand = 0, int maxRand = 100); //round - количество знаков после запятой
-void FillRandUniq(char arr[R][C], int minRand = 33, int maxRand = 254); //нижняя и верхняя граница символов
+void FillRandUniq(int arr[R][C], int minRand = 0, int maxRand = 100); //РЅРёР¶РЅСЏСЏ Рё РІРµСЂС…РЅСЏСЏ РіСЂР°РЅРёС†Р° С‡РёСЃРµР»
+void FillRandUniq(float arr[R][C], int round = round_size, int minRand = 0, int maxRand = 100); //round - РєРѕР»РёС‡РµСЃС‚РІРѕ Р·РЅР°РєРѕРІ РїРѕСЃР»Рµ Р·Р°РїСЏС‚РѕР№
+void FillRandUniq(double arr[R][C], int round = round_size, int minRand = 0, int maxRand = 100); //round - РєРѕР»РёС‡РµСЃС‚РІРѕ Р·РЅР°РєРѕРІ РїРѕСЃР»Рµ Р·Р°РїСЏС‚РѕР№
+void FillRandUniq(char arr[R][C], int minRand = 33, int maxRand = 254); //РЅРёР¶РЅСЏСЏ Рё РІРµСЂС…РЅСЏСЏ РіСЂР°РЅРёС†Р° СЃРёРјРІРѕР»РѕРІ
 
 void Print(int arr[C]);
 void Print(float arr[C]);
@@ -36,10 +36,10 @@ void Print(float arr[R][C]);
 void Print(double arr[R][C]);
 void Print(char arr[R][C]);
 
-void FindTwins(int arr[R][C], int counter_show = 1); //counter_show - какое количество раз должно встретиться значение в массиве
-void FindTwins(float arr[R][C], int counter_show = 1); //counter_show - какое количество раз должно встретиться значение в массиве
-void FindTwins(double arr[R][C], int counter_show = 1); //counter_show - какое количество раз должно встретиться значение в массиве
-void FindTwins(char arr[R][C], int counter_show = 1); //counter_show - какое количество раз должно встретиться значение в массиве
+void FindTwins(int arr[R][C], int counter_show = 1); //counter_show - РєР°РєРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂР°Р· РґРѕР»Р¶РЅРѕ РІСЃС‚СЂРµС‚РёС‚СЊСЃСЏ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ
+void FindTwins(float arr[R][C], int counter_show = 1); //counter_show - РєР°РєРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂР°Р· РґРѕР»Р¶РЅРѕ РІСЃС‚СЂРµС‚РёС‚СЊСЃСЏ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ
+void FindTwins(double arr[R][C], int counter_show = 1); //counter_show - РєР°РєРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂР°Р· РґРѕР»Р¶РЅРѕ РІСЃС‚СЂРµС‚РёС‚СЊСЃСЏ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ
+void FindTwins(char arr[R][C], int counter_show = 1); //counter_show - РєР°РєРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂР°Р· РґРѕР»Р¶РЅРѕ РІСЃС‚СЂРµС‚РёС‚СЊСЃСЏ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ
 
 int SummArr(int arr[C]);
 float SummArr(float arr[C]);

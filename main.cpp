@@ -1,48 +1,48 @@
-/*
+п»ї/*
 * TODO:
- 1. Заполнить двумерный массив уникальными значениями
- 2. Подсчитать количество вхождений значений в двумерный массив.
+ 1. Р—Р°РїРѕР»РЅРёС‚СЊ РґРІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ СѓРЅРёРєР°Р»СЊРЅС‹РјРё Р·РЅР°С‡РµРЅРёСЏРјРё
+ 2. РџРѕРґСЃС‡РёС‚Р°С‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ РІС…РѕР¶РґРµРЅРёР№ Р·РЅР°С‡РµРЅРёР№ РІ РґРІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ.
   
 DONE:
-Написать перегруженные функции для одномерного и двумерного массива типа int, float, double, char :
+РќР°РїРёСЃР°С‚СЊ РїРµСЂРµРіСЂСѓР¶РµРЅРЅС‹Рµ С„СѓРЅРєС†РёРё РґР»СЏ РѕРґРЅРѕРјРµСЂРЅРѕРіРѕ Рё РґРІСѓРјРµСЂРЅРѕРіРѕ РјР°СЃСЃРёРІР° С‚РёРїР° int, float, double, char :
 	... FillRand(...);
 	... Print(...);
 	... Sum(...);
-	... Avg(...);		//Возвращает среднее арифметическое элементов массива
+	... Avg(...);		//Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°
 	...	minValueIn(...);
 	... maxValueIn(...);
-	... Sort();	//Сортирует массив
-	... Shift();	//Циклически сдвигает массива на заданное число элементов в указанном направлении
+	... Sort();	//РЎРѕСЂС‚РёСЂСѓРµС‚ РјР°СЃСЃРёРІ
+	... Shift();	//Р¦РёРєР»РёС‡РµСЃРєРё СЃРґРІРёРіР°РµС‚ РјР°СЃСЃРёРІР° РЅР° Р·Р°РґР°РЅРЅРѕРµ С‡РёСЃР»Рѕ СЌР»РµРјРµРЅС‚РѕРІ РІ СѓРєР°Р·Р°РЅРЅРѕРј РЅР°РїСЂР°РІР»РµРЅРёРё
 */
 
-//Выключение не используемого коентента...
-//#define ONEDIM_INT //Одномерный массив INT
-//#define ONEDIM_FLOAT //Одномерный массив FLOAT
-//#define ONEDIM_DOUBLE //Одномерный массив DOUBLE
-//#define ONEDIM_CHAR //Одномерный массив CHAR
+//Р’С‹РєР»СЋС‡РµРЅРёРµ РЅРµ РёСЃРїРѕР»СЊР·СѓРµРјРѕРіРѕ РєРѕРµРЅС‚РµРЅС‚Р°...
+//#define ONEDIM_INT //РћРґРЅРѕРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ INT
+//#define ONEDIM_FLOAT //РћРґРЅРѕРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ FLOAT
+//#define ONEDIM_DOUBLE //РћРґРЅРѕРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ DOUBLE
+//#define ONEDIM_CHAR //РћРґРЅРѕРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ CHAR
 
-//#define TWODIM_INT //Двумерный массив INT + function FindTwins
-//#define TWODIM_FLOAT //Двумерный массив FLOAT + function FindTwins
-//#define TWODIM_DOUBLE //Двумерный массив DOUBLE + function FindTwins
-//#define TWODIM_CHAR //Двумерный массив CHAR + function FindTwins
+//#define TWODIM_INT //Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ INT + function FindTwins
+//#define TWODIM_FLOAT //Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ FLOAT + function FindTwins
+//#define TWODIM_DOUBLE //Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ DOUBLE + function FindTwins
+//#define TWODIM_CHAR //Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ CHAR + function FindTwins
 
-//#define TWODIM_INT_UNIQ //Двумерный массив INT
-//#define TWODIM_FLOAT_UNIQ //Двумерный массив FLOAT
-//#define TWODIM_DOUBLE_UNIQ //Двумерный массив DOUBLE
-#define TWODIM_CHAR_UNIQ //Двумерный массив CHAR
+//#define TWODIM_INT_UNIQ //Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ INT
+//#define TWODIM_FLOAT_UNIQ //Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ FLOAT
+//#define TWODIM_DOUBLE_UNIQ //Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ DOUBLE
+#define TWODIM_CHAR_UNIQ //Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ CHAR
 
-//Прототипы функций
+//РџСЂРѕС‚РѕС‚РёРїС‹ С„СѓРЅРєС†РёР№
 #include "Function.h"
 
 void main()
 {
 	setlocale(LC_ALL, "Russian");
 
-	int shifting_size = 4; //Размер сдвига
-	bool shift_to_right = true; //Сдвиг вправо?
+	int shifting_size = 4; //Р Р°Р·РјРµСЂ СЃРґРІРёРіР°
+	bool shift_to_right = true; //РЎРґРІРёРі РІРїСЂР°РІРѕ?
 
 #ifdef ONEDIM_INT
-	cout << "Одномерный массив - int:\n";
+	cout << "РћРґРЅРѕРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ - int:\n";
 	int arr[C]{};
 	FillRand(arr);
 	Print(arr);
@@ -56,14 +56,14 @@ void main()
 	SortingArr(arr, true);
 	Print(arr);
 
-	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Да\n" : cout << "Нет\n";
+	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Р”Р°\n" : cout << "РќРµС‚\n";
 	Shift(arr, shifting_size, shift_to_right);
 	Print(arr);
 	cout << endl;
 #endif // ONEDIM_INT
 
 #ifdef ONEDIM_FLOAT
-	cout << "Одномерный массив - float:\n";
+	cout << "РћРґРЅРѕРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ - float:\n";
 	float farr[C]{};
 	FillRand(farr);
 	Print(farr);
@@ -77,14 +77,14 @@ void main()
 	SortingArr(farr, true);
 	Print(farr);
 
-	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Да\n" : cout << "Нет\n";
+	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Р”Р°\n" : cout << "РќРµС‚\n";
 	Shift(farr, shifting_size, shift_to_right);
 	Print(farr);
 	cout << endl;
 #endif // ONEDIM_FLOAT
 
 #ifdef ONEDIM_DOUBLE
-	cout << "Одномерный массив - double:\n";
+	cout << "РћРґРЅРѕРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ - double:\n";
 	double darr[C]{};
 	FillRand(darr);
 	Print(darr);
@@ -98,14 +98,14 @@ void main()
 	SortingArr(darr, true);
 	Print(darr);
 
-	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Да\n" : cout << "Нет\n";
+	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Р”Р°\n" : cout << "РќРµС‚\n";
 	Shift(darr, shifting_size, shift_to_right);
 	Print(darr);
 	cout << endl;
 #endif // ONEDIM_DOUBLE
 
 #ifdef ONEDIM_CHAR
-	cout << "Одномерный массив - char:\n";
+	cout << "РћРґРЅРѕРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ - char:\n";
 	char carr[C]{};
 	FillRand(carr);
 	Print(carr);
@@ -119,14 +119,14 @@ void main()
 	SortingArr(carr, true);
 	Print(carr);
 
-	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Да\n" : cout << "Нет\n";
+	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Р”Р°\n" : cout << "РќРµС‚\n";
 	Shift(carr, shifting_size, shift_to_right);
 	Print(carr);
 	cout << endl;
 #endif // ONEDIM_CHAR
 
 #ifdef TWODIM_INT
-	cout << "Двумерный массив - int:\n";
+	cout << "Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ - int:\n";
 	int arr[R][C]{};
 	FillRand(arr);
 	Print(arr);
@@ -136,14 +136,14 @@ void main()
 	cout << "Min = " << minValueIn(arr) << "\t";
 	cout << "Max = " << maxValueIn(arr) << "\t\n";
 
-	std::cout << "Поиск двойников\n";
+	std::cout << "РџРѕРёСЃРє РґРІРѕР№РЅРёРєРѕРІ\n";
 	FindTwins(arr);
 
 	cout << "\nSorting Up\n";
 	SortingArr(arr, true);
 	Print(arr);
 
-	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Да\n" : cout << "Нет\n";
+	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Р”Р°\n" : cout << "РќРµС‚\n";
 	Shift(arr, shifting_size, shift_to_right);
 	Print(arr);
 	cout << endl;
@@ -151,7 +151,7 @@ void main()
 
 
 #ifdef TWODIM_FLOAT
-	cout << "Двумерный массив - foat:\n";
+	cout << "Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ - foat:\n";
 	float farr[R][C]{};
 	FillRand(farr);
 	Print(farr);
@@ -160,21 +160,21 @@ void main()
 	cout << "Min = " << minValueIn(farr) << "\t";
 	cout << "Max = " << maxValueIn(farr) << "\t\n";
 
-	std::cout << "Поиск двойников\n";
+	std::cout << "РџРѕРёСЃРє РґРІРѕР№РЅРёРєРѕРІ\n";
 	FindTwins(farr);
 
 	cout << "\nSorting Up\n";
 	SortingArr(farr, true);
 	Print(farr);
 
-	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Да\n" : cout << "Нет\n";
+	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Р”Р°\n" : cout << "РќРµС‚\n";
 	Shift(farr, shifting_size, shift_to_right);
 	Print(farr);
 	cout << endl;
 #endif // TWODIM_FLOAT
 
 #ifdef TWODIM_DOUBLE
-	cout << "Двумерный массив - double:\n";
+	cout << "Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ - double:\n";
 	double darr[R][C]{};
 	FillRand(darr);
 	Print(darr);
@@ -184,21 +184,21 @@ void main()
 	cout << "Min = " << minValueIn(darr) << "\t";
 	cout << "Max = " << maxValueIn(darr) << "\t\n";
 
-	std::cout << "Поиск двойников\n";
+	std::cout << "РџРѕРёСЃРє РґРІРѕР№РЅРёРєРѕРІ\n";
 	FindTwins(darr);
 
 	cout << "\nSorting Up\n";
 	SortingArr(darr, true);
 	Print(darr);
 
-	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Да\n" : cout << "Нет\n";
+	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Р”Р°\n" : cout << "РќРµС‚\n";
 	Shift(darr, shifting_size, shift_to_right);
 	Print(darr);
 	cout << endl;
 #endif // TWODIM_DOUBLE
 
 #ifdef TWODIM_CHAR
-	cout << "Двумерный массив - char:\n";
+	cout << "Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ - char:\n";
 	char carr[R][C]{};
 	FillRand(carr);
 	Print(carr);
@@ -208,14 +208,14 @@ void main()
 	cout << "Min = " << minValueIn(carr) << "\t";
 	cout << "Max = " << maxValueIn(carr) << "\t\n";
 
-	std::cout << "Поиск двойников\n";
+	std::cout << "РџРѕРёСЃРє РґРІРѕР№РЅРёРєРѕРІ\n";
 	FindTwins(carr);
 
 	cout << "\nSorting Up\n";
 	SortingArr(carr, true);
 	Print(carr);
 
-	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Да\n" : cout << "Нет\n";
+	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Р”Р°\n" : cout << "РќРµС‚\n";
 	Shift(carr, shifting_size, shift_to_right);
 	Print(carr);
 	cout << endl;
@@ -223,8 +223,8 @@ void main()
 
 #ifdef TWODIM_INT_UNIQ
 
-	cout << "Двумерный массив - int:\n";
-	cout << "Уникальне значения\n";
+	cout << "Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ - int:\n";
+	cout << "РЈРЅРёРєР°Р»СЊРЅРµ Р·РЅР°С‡РµРЅРёСЏ\n";
 	int arr[R][C]{};
 	FillRandUniq(arr);
 	Print(arr);
@@ -238,7 +238,7 @@ void main()
 	SortingArr(arr, true);
 	Print(arr);
 
-	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Да\n" : cout << "Нет\n";
+	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Р”Р°\n" : cout << "РќРµС‚\n";
 	Shift(arr, shifting_size, shift_to_right);
 	Print(arr);
 	cout << endl;
@@ -246,8 +246,8 @@ void main()
 
 #ifdef TWODIM_FLOAT_UNIQ
 
-	cout << "Двумерный массив - float:\n";
-	cout << "Уникальне значения\n";
+	cout << "Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ - float:\n";
+	cout << "РЈРЅРёРєР°Р»СЊРЅРµ Р·РЅР°С‡РµРЅРёСЏ\n";
 	float farr[R][C]{};
 	FillRandUniq(farr);
 	Print(farr);
@@ -261,7 +261,7 @@ void main()
 	SortingArr(farr, true);
 	Print(farr);
 
-	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Да\n" : cout << "Нет\n";
+	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Р”Р°\n" : cout << "РќРµС‚\n";
 	Shift(farr, shifting_size, shift_to_right);
 	Print(farr);
 	cout << endl;
@@ -269,8 +269,8 @@ void main()
 
 #ifdef TWODIM_DOUBLE_UNIQ
 
-	cout << "Двумерный массив - double:\n";
-	cout << "Уникальне значения\n";
+	cout << "Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ - double:\n";
+	cout << "РЈРЅРёРєР°Р»СЊРЅРµ Р·РЅР°С‡РµРЅРёСЏ\n";
 	double darr[R][C]{};
 	FillRandUniq(darr);
 	Print(darr);
@@ -284,7 +284,7 @@ void main()
 	SortingArr(darr, true);
 	Print(darr);
 
-	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Да\n" : cout << "Нет\n";
+	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Р”Р°\n" : cout << "РќРµС‚\n";
 	Shift(darr, shifting_size, shift_to_right);
 	Print(darr);
 	cout << endl;
@@ -292,8 +292,8 @@ void main()
 
 #ifdef TWODIM_CHAR_UNIQ
 
-	cout << "Двумерный массив - char:\n";
-	cout << "Уникальне значения\n";
+	cout << "Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ - char:\n";
+	cout << "РЈРЅРёРєР°Р»СЊРЅРµ Р·РЅР°С‡РµРЅРёСЏ\n";
 	char carr[R][C]{};
 	FillRandUniq(carr);
 	Print(carr);
@@ -307,7 +307,7 @@ void main()
 	SortingArr(carr, true);
 	Print(carr);
 
-	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Да\n" : cout << "Нет\n";
+	cout << "Shift = " << shifting_size << "; Right = "; shift_to_right ? cout << "Р”Р°\n" : cout << "РќРµС‚\n";
 	Shift(carr, shifting_size, shift_to_right);
 	Print(carr);
 	cout << endl;
@@ -315,18 +315,18 @@ void main()
 }
 
 
-//Исполнитель
+//РСЃРїРѕР»РЅРёС‚РµР»СЊ
 /*
 -----------------------------------------------------
 |													|
-|            "Компьютерная академия ШАГ"            |
-|      Курс: БД011                                  |
-|   Предмет: Основы программирования на языке C++   |
+|            "РљРѕРјРїСЊСЋС‚РµСЂРЅР°СЏ Р°РєР°РґРµРјРёСЏ РЁРђР“"            |
+|      РљСѓСЂСЃ: Р‘Р”011                                  |
+|   РџСЂРµРґРјРµС‚: РћСЃРЅРѕРІС‹ РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ РЅР° СЏР·С‹РєРµ C++   |
 |                                                   |
-|	  Исполнитель: Курицын Алексей					|
-|	Преподаватель: Ковтун Олег						|
+|	  РСЃРїРѕР»РЅРёС‚РµР»СЊ: РљСѓСЂРёС†С‹РЅ РђР»РµРєСЃРµР№					|
+|	РџСЂРµРїРѕРґР°РІР°С‚РµР»СЊ: РљРѕРІС‚СѓРЅ РћР»РµРі						|
 |                                                   |
-|                Екатеринбург - 2020                |
+|                Р•РєР°С‚РµСЂРёРЅР±СѓСЂРі - 2020                |
 |                                                   |
 -----------------------------------------------------
 */
