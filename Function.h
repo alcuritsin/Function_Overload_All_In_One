@@ -16,11 +16,16 @@ const int round_size = 3; //Количество знаков после запятой для массивов float и
 void FillRand(int arr[C], int minRand = 0, int maxRand = 100); //нижняя и верхняя граница чисел
 void FillRand(float arr[C], int round = round_size, int minRand = 0, int maxRand = 100); //round - количество знаков после запятой
 void FillRand(double arr[C], int round = round_size, int minRand = 0, int maxRand = 100); //round - количество знаков после запятой
-void FillRand(char arr[C], int minRand = 65, int maxRand = 90); //От A до Z
+void FillRand(char arr[C], int minRand = 33, int maxRand = 254); //От A до Z
 void FillRand(int arr[R][C], int minRand = 0, int maxRand = 100); //нижняя и верхняя граница чисел
 void FillRand(float arr[R][C], int round = round_size, int minRand = 0, int maxRand = 100); //round - количество знаков после запятой
 void FillRand(double arr[R][C], int round = round_size, int minRand = 0, int maxRand = 100); //round - количество знаков после запятой
-void FillRand(char arr[R][C], int minRand = 65, int maxRand = 90); //От A до Z
+void FillRand(char arr[R][C], int minRand = 33, int maxRand = 254); //От A до Z
+
+void FillRandUniq(int arr[R][C], int minRand = 0, int maxRand = 100); //нижняя и верхняя граница чисел
+void FillRandUniq(float arr[R][C], int round = round_size, int minRand = 0, int maxRand = 100); //round - количество знаков после запятой
+void FillRandUniq(double arr[R][C], int round = round_size, int minRand = 0, int maxRand = 100); //round - количество знаков после запятой
+void FillRandUniq(char arr[R][C], int minRand = 33, int maxRand = 254); //нижняя и верхняя граница символов
 
 void Print(int arr[C]);
 void Print(float arr[C]);
@@ -30,6 +35,11 @@ void Print(int arr[R][C]);
 void Print(float arr[R][C]);
 void Print(double arr[R][C]);
 void Print(char arr[R][C]);
+
+void FindTwins(int arr[R][C], int counter_show = 1); //counter_show - какое количество раз должно встретиться значение в массиве
+void FindTwins(float arr[R][C], int counter_show = 1); //counter_show - какое количество раз должно встретиться значение в массиве
+void FindTwins(double arr[R][C], int counter_show = 1); //counter_show - какое количество раз должно встретиться значение в массиве
+void FindTwins(char arr[R][C], int counter_show = 1); //counter_show - какое количество раз должно встретиться значение в массиве
 
 int SummArr(int arr[C]);
 float SummArr(float arr[C]);
