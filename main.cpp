@@ -21,10 +21,10 @@ DONE:
 //#define ONEDIM_DOUBLE //Одномерный массив DOUBLE
 //#define ONEDIM_CHAR //Одномерный массив CHAR
 
-#define TWODIM_INT //Двумерный массив INT + function FindTwins
+//#define TWODIM_INT //Двумерный массив INT + function FindTwins
 //#define TWODIM_FLOAT //Двумерный массив FLOAT + function FindTwins
 //#define TWODIM_DOUBLE //Двумерный массив DOUBLE + function FindTwins
-//#define TWODIM_CHAR //Двумерный массив CHAR + function FindTwins
+#define TWODIM_CHAR //Двумерный массив CHAR + function FindTwins
 
 //#define TWODIM_INT_UNIQ //Двумерный массив INT
 //#define TWODIM_FLOAT_UNIQ //Двумерный массив FLOAT
@@ -33,6 +33,7 @@ DONE:
 
 //Прототипы функций
 #include "Function.h"
+#include "FunctionTemplate.cpp"
 
 void main()
 {
